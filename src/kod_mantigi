@@ -1,9 +1,9 @@
 Kodun Akışı
 
     Kullanıcı formu doldurur ve gönderir:
-        Kullanıcı formda herhangi bir şey yazmasa bile (şu anda sabit olarak "taha" gönderiliyor), form gönderildiğinde handleFormSubmit çalışır.
+        Kullanıcı formda herhangi bir şey yazmasa bile, form gönderildiğinde handleFormSubmit çalışır.
     handleFormSubmit tetiklenir:
-        handleFormSubmit, search("taha") fonksiyonunu çağırır. Bu fonksiyon aslında App bileşeninden gelen handleSubmit fonksiyonudur.
+        handleFormSubmit, search("") fonksiyonunu çağırır. Bu fonksiyon aslında App bileşeninden gelen handleSubmit fonksiyonudur.
     handleSubmit çalışır:
         handleSubmit, konsola "taha" yazdırır ve searchImages("taha") fonksiyonunu çağırır.
     API'den veri çekilir:

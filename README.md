@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# React Image API Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The General Concept of the Project
 
-## Available Scripts
+This application allows users to search for images using specific keywords. The search results are dynamically updated with data fetched from the API and displayed as a list of images. The application employs a component-based structure, enabling each component to fulfill a specific function, which enhances the reusability of the code.
 
-In the project directory, you can run:
+![react image api](img_for_readme/react-api-img.png)
 
-### `npm start`
+- General Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  - The project includes the App component as the main component.
+  - The App component manages the necessary state (images) for performing the search operation and a function (handleSubmit) to initiate the search.
+  - The SearchHeader component contains a form to collect the search term from the user.
+  - The ImageList component is used to display the search results.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- App Component
 
-### `npm test`
+  - State Management: A state variable named images is defined using the useState hook. This variable holds the search results.
+  - Functions:
+    - handleSubmit: Calls the searchImages function with the search term obtained from the user and updates the results using setImages.
+  - Render Process: The handleSubmit function is passed as a prop to the SearchHeader component, allowing it to send data to the main component when the user performs a search. Additionally, the images state is passed as a prop to the ImageList component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- SearchHeader Component
 
-### `npm run build`
+  - Form Structure: Contains a form to collect the search term from the user. The handleFormSubmit function is triggered when the form is submitted.
+  - State Management: A state variable named valueInput is used to manage the value in the input field. As the user types in the input field, valueInput is updated through the handleChange function.
+  - Search Operation: When the form is submitted, the search term entered by the user is sent to the App component via the search prop.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Communication with the API (searchImages)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Using Axios: The searchImages function sends a GET request to the Unsplash API. This request includes the search term (term) along with the API key (Authorization).
+  - Data Processing: The response from the API contains the search results in response.data.results. These results are returned to the App component and updated there using setImages.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ImageList Component
 
-### `npm run eject`
+  - Image Listing: The ImageList creates an ImageItem component for each image it receives through the imagesPlaceHolder prop by mapping over them.
+  - Component for Each Image: Each ImageItem component displays a small-sized version of the corresponding image.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- ImageItem Component
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - Image Display: The ImageItem displays the relevant image through the image prop passed to it. The source URL of the image and its alternative description (alt text) are used.
