@@ -6,10 +6,10 @@ This application allows users to search for images using specific keywords. The 
 
 - General Structure
 
-* The project includes the App component as the main component.
-* The App component manages the necessary state (images) for performing the search operation and a function (handleSubmit) to initiate the search.
-* The SearchHeader component contains a form to collect the search term from the user.
-* The ImageList component is used to display the search results.
+   * The project includes the App component as the main component.
+   * The App component manages the necessary state (images) for performing the search operation and a function (handleSubmit) to initiate the search.
+   * The SearchHeader component contains a form to collect the search term from the user.
+   * The ImageList component is used to display the search results.
 
 - App Component
 
