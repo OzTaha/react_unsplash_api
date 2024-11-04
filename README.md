@@ -4,6 +4,8 @@
 
 This application allows users to search for images using specific keywords. The search results are dynamically updated with data fetched from the API and displayed as a list of images. The application employs a component-based structure, enabling each component to fulfill a specific function, which enhances the reusability of the code.
 
+![react image api](img_for_readme/react-api-img.png)
+
 - General Structure
 
   - The project includes the App component as the main component.
