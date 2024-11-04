@@ -1,0 +1,12 @@
+Kodun Akışı
+
+    Kullanıcı formu doldurur ve gönderir:
+        Kullanıcı formda herhangi bir şey yazmasa bile (şu anda sabit olarak "taha" gönderiliyor), form gönderildiğinde handleFormSubmit çalışır.
+    handleFormSubmit tetiklenir:
+        handleFormSubmit, search("taha") fonksiyonunu çağırır. Bu fonksiyon aslında App bileşeninden gelen handleSubmit fonksiyonudur.
+    handleSubmit çalışır:
+        handleSubmit, konsola "taha" yazdırır ve searchImages("taha") fonksiyonunu çağırır.
+    API'den veri çekilir:
+        searchImages, Axios ile Unsplash API'ye bir istek gönderir ve API'den "taha" ile ilgili görselleri getirir.
+
+Bu yapı, bir arama uygulamasının temel mantığını örnekleyen harika bir yapıdır. Prop'lar sayesinde bileşenler arasında veri alışverişi sağlanır ve işlevler (fonksiyonlar) bir bileşenden diğerine aktarılabilir.
